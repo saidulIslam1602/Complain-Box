@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseDropYourComplainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AddComplainInDatabaseTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComplainCategory" Type="varchar" MaxLength="25" />
+    <Property Name="ComplainaArea" Type="varchar" MaxLength="25" />
+    <Property Name="RoadNumber" Type="varchar" MaxLength="25" />
+    <Property Name="ComplainDeatils" Type="varchar(max)" />
+    <Property Name="Photo" Type="varchar(max)" />
+    <Property Name="ComplainerName" Type="varchar" MaxLength="25" />
+    <Property Name="Email" Type="varchar" MaxLength="25" />
+    <Property Name="ContractNumber" Type="varchar" MaxLength="11" />
+    <Property Name="GiveStatus" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityContainer Name="DatabaseDropYourComplainModelStoreContainer">
+    <EntitySet Name="AddComplainInDatabaseTable" EntityType="Self.AddComplainInDatabaseTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,218 @@
+﻿@model FinalYearProjectDYC.Models.ComplainModel.AddComplainInDatabaseTable
+
+@*@{
+    ViewBag.Title = "AddNewComplain";
+}
+
+<h2>AddNewComplain</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>AddComplainInDatabaseTable</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ComplainCategory, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ComplainCategory, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ComplainCategory, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ComplainaArea, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ComplainaArea, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ComplainaArea, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RoadNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RoadNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RoadNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ComplainDeatils, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ComplainDeatils, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ComplainDeatils, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Photo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ComplainerName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ComplainerName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ComplainerName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContractNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContractNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ContractNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GiveStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GiveStatus, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GiveStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+@{
+    ViewBag.Title = "AddNewComplain";
+}
+
+<h2>@ViewBag.msg</h2>
+
+@using (Html.BeginForm("AddNewComplain", "Complain", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Complain Category", htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.ComplainCategory, htmlAttributes: new {@class = "control-label col-md-2"})*@
+
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.ComplainCategory, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                @Html.DropDownListFor(model => model.ComplainCategory, new SelectList(ViewBag.list), "Select One", htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.ComplainCategory, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Complain Area", htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.ComplainaArea, htmlAttributes: new {@class = "control-label col-md-2"})*@
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ComplainaArea, new SelectList(ViewBag.ComplainArea), "Select One", htmlAttributes: new {@class = "form-control"})
+                @*@Html.EditorFor(model => model.ComplainaArea, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                @Html.ValidationMessageFor(model => model.ComplainaArea, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.RoadNumber, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            @Html.Label("Road Number", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.RoadNumber, new { @class = "form-control" })
+                @*@Html.EditorFor(model => model.RoadNumber, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                @Html.ValidationMessageFor(model => model.RoadNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Complain Details", htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.ComplainDeatils, htmlAttributes: new {@class = "control-label col-md-2"})*@
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.ComplainDeatils, new { htmlAttributes = new { @class = "form-control" } })*@
+                @*@Html.LabelFor(model => model.ComplainDeatils, new { @class = "control-label col-md-2" })*@
+                @Html.TextAreaFor(model => model.ComplainDeatils, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.ComplainDeatils, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.Photo, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input type="file" id="imgfile" name="imgfile" class="btn btn-info">
+                @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Complainer Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.ComplainerName, htmlAttributes: new {@class = "control-label col-md-2"})*@
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.ComplainerName, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.ComplainerName, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.ComplainerName, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Contact Number", htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.ContractNumber, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.ContractNumber, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.ContractNumber, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.ContractNumber, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+   <h1> @ViewBag.msg2</h1>
+    <h1>@ViewBag.ComplainId</h1>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

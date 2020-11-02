@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DatabaseDropYourComplainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AddComplainInDatabaseTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComplainCategory" Type="varchar" MaxLength="25" />
+          <Property Name="ComplainaArea" Type="varchar" MaxLength="25" />
+          <Property Name="RoadNumber" Type="varchar" MaxLength="25" />
+          <Property Name="ComplainDeatils" Type="varchar(max)" />
+          <Property Name="Photo" Type="varchar(max)" />
+          <Property Name="ComplainerName" Type="varchar" MaxLength="25" />
+          <Property Name="Email" Type="varchar" MaxLength="25" />
+          <Property Name="ContractNumber" Type="varchar" MaxLength="11" />
+          <Property Name="GiveStatus" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityContainer Name="DatabaseDropYourComplainModelStoreContainer">
+          <EntitySet Name="AddComplainInDatabaseTable" EntityType="Self.AddComplainInDatabaseTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseDropYourComplainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AddComplainInDatabaseTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComplainCategory" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ComplainaArea" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RoadNumber" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ComplainDeatils" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ComplainerName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ContractNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="GiveStatus" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DatabaseDropYourComplainEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddComplainInDatabaseTables" EntityType="Self.AddComplainInDatabaseTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatabaseDropYourComplainModelStoreContainer" CdmEntityContainer="DatabaseDropYourComplainEntities">
+          <EntitySetMapping Name="AddComplainInDatabaseTables">
+            <EntityTypeMapping TypeName="DatabaseDropYourComplainModel.AddComplainInDatabaseTable">
+              <MappingFragment StoreEntitySet="AddComplainInDatabaseTable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ComplainCategory" ColumnName="ComplainCategory" />
+                <ScalarProperty Name="ComplainaArea" ColumnName="ComplainaArea" />
+                <ScalarProperty Name="RoadNumber" ColumnName="RoadNumber" />
+                <ScalarProperty Name="ComplainDeatils" ColumnName="ComplainDeatils" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ComplainerName" ColumnName="ComplainerName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="GiveStatus" ColumnName="GiveStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

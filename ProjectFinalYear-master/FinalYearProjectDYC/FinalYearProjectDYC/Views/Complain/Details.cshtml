@@ -1,0 +1,92 @@
+﻿@model FinalYearProjectDYC.Models.ComplainModel.AddComplainInDatabaseTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4> @Html.ActionLink("Complain List", "ComplainList")</h4> <h4> @Html.ActionLink("Logout", "LogOut")</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainaArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainaArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoadNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoadNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainDeatils)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainDeatils)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+            
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Photo)*@
+            <img src="@Url.Content(@Model.Photo)"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiveStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiveStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
